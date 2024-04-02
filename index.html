@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM class modification</title>
+    <style>
+        .theme-icon {
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: white;
+
+        }
+        .paragraphs{
+            color: white;
+        }
+        .active{
+            border: 1px solid black;
+        }
+        .theme-Dark{
+            background-color: black;
+            counter-reset: #fff;
+
+        }
+        .theme-light{
+            background-color: #f4a261;
+            counter-reset: black;
+
+        }
+ 
+    </style>
+</head>
+<body id="body" >
+    <div>
+        <img src="Darkmode.png" class="theme-icon active" id="img-Dark"  onclick="Drakmode()"/>
+        <img src="lightmode.png" class="theme-icon  "  id="img-light" onclick="lightmode() "/> 
+        
+
+        <h1 class="paragraphs"> This is Light/Dark Mode Theme </h1>
+
+        <p class="paragraphs">
+            The paraphraser identifies the subject you are writing about and, with special algorithms, offers you words and phrases relating to your topic. Use our AI-powered Paraphrasing Tool to rephrase words, sentences, and paragraphs effortlessly. A free tool trusted by over 100,000 users each month.
+        </p>
+    </div>
+    <script>
+        function Drakmode(){
+            const imgDark = document.getElementById('img-Dark');
+            imgDark.classList.add('active');
+
+            const imglight = document.getElementById('img-light');
+            imglight.classList.remove('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = "theme-Dark" ;
+
+        }
+
+        function lightmode(){
+            const imgDark = document.getElementById('img-Dark');
+            imgDark.classList.remove('active');
+
+            const imglight = document.getElementById('img-light');
+            imglight.classList.add('active');
+
+            const bodyElement = document.getElementById('body');
+            bodyElement.className = "theme-light" ;
+
+
+
+}
+
+    </script>
+</body>
+</html>
